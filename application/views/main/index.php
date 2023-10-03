@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $version = md5('signOutzv18');
+$today = date('Y-m-d');
 ?><!DOCTYPE html>
 <html lang="en">
 
