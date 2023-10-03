@@ -1,6 +1,4 @@
 <?php
-echo 'test 111';
-exit;
 /**
  * CodeIgniter
  *
