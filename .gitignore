@@ -1,0 +1,8 @@
+assets/
+.git/
+googleanalytics/
+_oldbackup/
+template/
+uploads/
+vendor/
+weather/
