@@ -1,5 +1,5 @@
 <?php
-echo 'test';
+echo 'test 111';
 exit;
 /**
  * CodeIgniter
