@@ -296,7 +296,7 @@ class FPDF_TPL extends fpdi_bridge
      * @see http://fpdf.org/en/doc/setfont.htm
      * @see http://www.tcpdf.org/doc/code/classTCPDF.html#afd56e360c43553830d543323e81bc045
      */
-    public function SetFont($family, $style = '', $size = null, $fontfile = '', $subset = 'default', $out = true)
+    public function SetFont($family, $style = '', $size = 0, $fontfile = '', $subset = 'default', $out = true) 
     {
         if (is_subclass_of($this, 'TCPDF')) {
             $args = func_get_args();
