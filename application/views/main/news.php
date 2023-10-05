@@ -18,7 +18,7 @@
 			<?php foreach($rsList as $item){?>
 				<div class="col-lg-4 col-md-6 news-slice">
                     <div class="single-news-content">
-                        <a href="<?=base_url('newsdetail/'.$item->idcontent)?>" class="news-thum news-thumbg-1" style="background-image: url(<?=base_url()?>uploads/timthumb.php?src=<?=base_url()?>uploads/images/<?=$item->content_thumbnail?>&w=740&h=530?v=1);"></a>
+                        <a href="<?=base_url('newsdetail/'.$item->idcontent)?>" class="news-thum news-thumbg-1" style="background-image: url(<?=base_url()?>uploads/timthumb.php?src=<?=base_url()?>uploads/images/<?=$item->content_thumbnail?>&w=740&h=530);"></a>
                         <div class="news-contant">
 							<div class="new-title">
 								<h4><a href="<?=base_url('newsdetail/'.$item->idcontent)?>"><?=$item->content_title?></a></h4>
