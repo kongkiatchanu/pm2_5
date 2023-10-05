@@ -262,39 +262,40 @@ class Admin extends CI_Controller {
 						}
 					}
 					
-					for($i=0;$i<count($_FILES["photos"]['tmp_name']);$i++) {
-						
+					if(@$_FILES["photos"]){
+						for($i=0;$i<count($_FILES["photos"]['tmp_name']);$i++) {
+							
 
-						$ints=date('YmdGis');
-						if(!empty($_FILES["photos"]["tmp_name"][$i])) {
-							if ($_FILES["photos"]["type"][$i] == "image/gif") {
-								$ext = "gif";
-							}elseif ($_FILES["photos"]["type"][$i] == "image/pjpeg" || $_FILES["photos"]["type"][$i] == "image/jpeg") {
-								$ext = "jpg";
-							}elseif ($_FILES["photos"]["type"][$i] == "image/x-png"  || $_FILES["photos"]["type"][$i] =="image/png") {
-								$ext = "png";
-							}		
-							if(!empty($ext)) {
-								$filenames =  'g_'.$ar['idcontent'].'_'.$ints."_".$i.".".$ext;
-								copy($_FILES["photos"]["tmp_name"][$i],$_SERVER["DOCUMENT_ROOT"]."/uploads/gallery/".$filenames);	
-								//insert database
-								$ar_assets = array(
-									'img_content_id' => $this->input->post('idcontent'),
-									'img_filename' => $filenames,
-									'img_size' => $_FILES["photos"]["size"][$i],
-									'img_createdate' => date('Y-m-d H:i:s')
-								);
-								
-								$this->admin_model->insertContentGalleryImgDetail($ar_assets); 
-								
-							} else {		
-								echo "<script>alert('ไฟล์รูปภาพไม่ถูกต้อง');</script>";  
-								//redirect('admin/gallery/'.$this->input->post('gallery_id'));
+							$ints=date('YmdGis');
+							if(!empty($_FILES["photos"]["tmp_name"][$i])) {
+								if ($_FILES["photos"]["type"][$i] == "image/gif") {
+									$ext = "gif";
+								}elseif ($_FILES["photos"]["type"][$i] == "image/pjpeg" || $_FILES["photos"]["type"][$i] == "image/jpeg") {
+									$ext = "jpg";
+								}elseif ($_FILES["photos"]["type"][$i] == "image/x-png"  || $_FILES["photos"]["type"][$i] =="image/png") {
+									$ext = "png";
+								}		
+								if(!empty($ext)) {
+									$filenames =  'g_'.$ar['idcontent'].'_'.$ints."_".$i.".".$ext;
+									copy($_FILES["photos"]["tmp_name"][$i],$_SERVER["DOCUMENT_ROOT"]."/uploads/gallery/".$filenames);	
+									//insert database
+									$ar_assets = array(
+										'img_content_id' => $this->input->post('idcontent'),
+										'img_filename' => $filenames,
+										'img_size' => $_FILES["photos"]["size"][$i],
+										'img_createdate' => date('Y-m-d H:i:s')
+									);
+									
+									$this->admin_model->insertContentGalleryImgDetail($ar_assets); 
+									
+								} else {		
+									echo "<script>alert('ไฟล์รูปภาพไม่ถูกต้อง');</script>";  
+									//redirect('admin/gallery/'.$this->input->post('gallery_id'));
+								}
 							}
+		
 						}
-	
 					}
-					
 					
 				}else{
 				
