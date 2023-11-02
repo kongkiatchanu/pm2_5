@@ -1,5 +1,5 @@
 <?php
-
+echo 'load';
 // Load the Google API PHP Client Library.
 require_once '/home/pm25/public_html/vendor/autoload.php';
 
