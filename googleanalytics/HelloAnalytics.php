@@ -1,7 +1,7 @@
 <?php
-echo 'load' .$_SERVER['DOCUMENT_ROOT'];
 // Load the Google API PHP Client Library.
 require_once '/home/pm25/public_html/vendor/autoload.php';
+echo 'load' .$_SERVER['DOCUMENT_ROOT'];
 
 $analytics = initializeAnalytics();
 $response = getReport($analytics);
