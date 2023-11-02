@@ -1,1 +1,4 @@
-<?php echo date('H:i:s');phpinfo(); ?>
+<?php 
+echo date('H:i:s');
+phpinfo(); 
+?>
