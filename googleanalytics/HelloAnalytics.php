@@ -5,6 +5,8 @@ require_once '/home/pm25/public_html/vendor/autoload.php';
 
 $analytics = initializeAnalytics();
 $response = getReport($analytics);
+print_r($response);
+exit;
 printResults($response);
 
 
