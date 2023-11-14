@@ -4,7 +4,7 @@
 		//exit;
 	}
 
-	$url = 'https://www-old.cmuccdc.org/api2/dustboy/stations';
+	$url = 'https://pm2_5.nrct.go.th/main/cache_station';
 
 	$rs = json_decode(file_get_contents($url));
 	//$rs = json_decode(file_get_contents('json/stations.json'));
