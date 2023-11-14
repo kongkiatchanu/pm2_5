@@ -40,7 +40,6 @@ class Main extends CI_Controller {
 	}
 
 	public function cache_station(){
-		header('Access-Control-Allow-Origin: *');
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 		if ( ! $stations = $this->cache->get('stations'))
 		{
