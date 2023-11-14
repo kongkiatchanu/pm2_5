@@ -1,10 +1,10 @@
 <?php 
-	header('Access-Control-Allow-Origin: https://www.cmuccdc.org');
+	header('Access-Control-Allow-Origin: https://pm2_5.nrct.go.th');
 	if($_GET['token']!=md5(date('YmdH'))){
 		//exit;
 	}
 
-	$url = 'https://www-old.cmuccdc.org/api2/dustboy/stations';
+	$url = 'https://open-api.cmuccdc.org/api/sensor/stationsAllSensor?apikey=sX98AxUteB3fMfPs3YrpZkkN9RbGJ9eX3CXJqHgQ';
 
 	$rs = json_decode(file_get_contents($url));
 	//$rs = json_decode(file_get_contents('json/stations.json'));
@@ -49,20 +49,6 @@
 				array_push($geojson['features'], $feature);
 			}
 		}
-		// $properties = $item;
-		// $feature = array(
-		// 	'type' => 'Feature',
-		// 	'geometry' => array(
-		// 		'type' => 'Point',
-		// 		'coordinates' => array(
-		// 			$item->dustboy_lon,
-		// 			$item->dustboy_lat,
-		// 		)
-		// 	),
-		// 	'properties' => $properties
-		// );
-		# Add feature arrays to feature collection array
-		//array_push($geojson['features'], $feature);
 	}
 	header('Content-type: application/json');
 	echo json_encode($geojson, JSON_NUMERIC_CHECK);
