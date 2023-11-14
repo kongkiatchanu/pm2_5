@@ -4,7 +4,7 @@
 		//exit;
 	}
 
-	$url = 'https://pm2_5.nrct.go.th/main/cache_station';
+	$url = 'https://open-api.cmuccdc.org/api/sensor/stationsAllSensor?apikey=sX98AxUteB3fMfPs3YrpZkkN9RbGJ9eX3CXJqHgQ';
 
 	$rs = json_decode(file_get_contents($url));
 	//$rs = json_decode(file_get_contents('json/stations.json'));
