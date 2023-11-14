@@ -4,7 +4,7 @@
 		//exit;
 	}
 
-	$url = '/main/cache_station';
+	$url = 'https://www-old.cmuccdc.org/api2/dustboy/stations';
 
 	$rs = json_decode(file_get_contents($url));
 	//$rs = json_decode(file_get_contents('json/stations.json'));
