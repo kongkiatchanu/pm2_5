@@ -40,6 +40,7 @@ class Main extends CI_Controller {
 	}
 
 	public function cache_station(){
+		
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
 		if ( ! $stations = $this->cache->get('stations'))
 		{
@@ -47,8 +48,10 @@ class Main extends CI_Controller {
 			$rs = json_decode(file_get_contents($url));
 
 			$this->cache->save('stations', $stations, 600);
+			//echo json_encode($stations);
 		}
 
+		header('Content-Type: application/json; charset=utf-8');
 		echo json_encode($stations);
 	}
 	
